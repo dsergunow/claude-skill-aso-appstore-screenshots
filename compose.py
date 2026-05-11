@@ -35,7 +35,14 @@ DESC_LINE_GAP = 24
 MAX_TEXT_W = int(CANVAS_W * 0.92)
 MAX_VERB_W = int(CANVAS_W * 0.92)
 
-FONT_PATH = "/Library/Fonts/SF-Pro-Display-Black.otf"
+# Headline font. Defaults to SF Pro Display Black at the canonical
+# macOS install path, but `ASO_FONT_PATH` overrides — useful when the
+# host app brand uses a custom typeface (Haffer, Inter, Geist, etc.)
+# and the marketing screenshots should match it.
+FONT_PATH = os.environ.get(
+    "ASO_FONT_PATH",
+    "/Library/Fonts/SF-Pro-Display-Black.otf",
+)
 FRAME_PATH = os.path.join(os.path.dirname(__file__), "assets", "device_frame.png")
 
 

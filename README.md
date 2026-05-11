@@ -25,11 +25,19 @@ pip install Pillow
 
 ### 3. Font requirement
 
-The skill uses **SF Pro Display Black** for headline text. On macOS, install it from [Apple's developer fonts](https://developer.apple.com/fonts/). The expected path is:
+The skill uses **SF Pro Display Black** for headline text by default. On macOS, install it from [Apple's developer fonts](https://developer.apple.com/fonts/). The expected path is:
 
 ```
 /Library/Fonts/SF-Pro-Display-Black.otf
 ```
+
+**Using a custom brand font.** If your app uses a custom typeface and you want the App Store screenshots to match, set `ASO_FONT_PATH` to point at any `.otf` / `.ttf`:
+
+```bash
+export ASO_FONT_PATH="/path/to/MyBrandFont-Black.otf"
+```
+
+Pick the heaviest weight you have — the layout assumes display / black for the headline. If unset, the skill falls back to the SF Pro path above.
 
 ### 4. Set up Gemini MCP (for AI enhancement)
 
